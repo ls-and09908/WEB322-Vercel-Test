@@ -9,6 +9,9 @@ app.use(express.static(__dirname + '/public'));
 // css files placed into this folder do not need to specify the 'public' dir in the path,
 // because express knows to automatically look for them in public
 // images and videos similarly seem to automatically check public without updating the path
+
+app.set('views', __dirname + '/views');
+
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, '/views/about.html'));
 })
